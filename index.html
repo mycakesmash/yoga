@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yoga With Emily</title>
+
+  <!-- Elegant serif + clean sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f4f0ea;
+      --ink:#1f1f1f;
+      --muted:#6b6b6b;
+      --max:980px;
+      --serif:"Cormorant Garamond", Georgia, serif;
+      --sans:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.65;
+    }
+    a{color:inherit; text-underline-offset:4px;}
+    a:hover{opacity:.85}
+
+    .page{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:42px 24px 70px;
+      position:relative;
+    }
+
+    /* Header */
+    .header{
+      display:grid;
+      grid-template-columns:84px 1fr;
+      align-items:center;
+      gap:18px;
+      margin-bottom:22px;
+    }
+    .brand-mark{
+      width:72px; height:72px;
+      border-radius:999px;
+      overflow:hidden;
+      box-shadow:0 10px 24px rgba(0,0,0,.06);
+      background:#ddd;
+    }
+    .brand-mark img{width:100%; height:100%; object-fit:cover; display:block;}
+
+    h1{
+      font-family:var(--serif);
+      font-weight:500;
+      letter-spacing:.08em;
+      font-size:56px;
+      margin:0;
+      text-transform:uppercase;
+    }
+
+    /* Intro */
+    .intro{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:34px;
+      margin-top:10px;
+      align-items:start;
+    }
+    .hello{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.14em;
+      text-transform:lowercase;
+      margin:18px 0 12px;
+    }
+    .intro p{
+      margin:0 0 14px;
+      color:#2a2a2a;
+      font-weight:300;
+      font-size:15px;
+    }
+    .photo{
+      width:100%;
+      aspect-ratio: 4 / 3;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 16px 32px rgba(0,0,0,.10);
+      background:#ddd;
+      margin-top:18px;
+    }
+    .photo img{width:100%; height:100%; object-fit:cover; display:block;}
+
+    .divider{
+      height:1px;
+      background:linear-gradient(to right, transparent, rgba(0,0,0,.18), transparent);
+      margin:36px 0 18px;
+    }
+    .section-title{
+      text-align:center;
+      font-size:14px;
+      letter-spacing:.18em;
+      color:var(--muted);
+      text-transform:uppercase;
+      margin:0 0 18px;
+      font-weight:400;
+    }
+
+    /* Classes */
+    .classes{
+      display:grid;
+      grid-template-columns: 280px 1fr 200px;
+      gap:24px;
+      align-items:start;
+      margin-top:6px;
+    }
+    .times .block{margin-bottom:26px;}
+    .times .day{
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:6px;
+      color:#2b2b2b;
+      font-weight:400;
+    }
+    .times .meta{
+      color:var(--muted);
+      font-weight:300;
+      font-size:14px;
+      line-height:1.55;
+      white-space:pre-line;
+    }
+    .class{margin-bottom:28px;}
+    .name{font-size:15px; font-weight:400; margin:0 0 8px; color:#202020;}
+    .desc{margin:0; font-size:14px; font-weight:300; color:#3a3a3a; max-width:520px;}
+
+    .note{
+      text-align:right;
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      line-height:1.5;
+      margin-top:50px;
+    }
+
+    /* Contact */
+    .contact{text-align:center; margin-top:30px;}
+    .label{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:0 0 8px;
+    }
+    .email{
+      font-size:14px;
+      letter-spacing:.06em;
+      margin:0 0 14px;
+      font-weight:300;
+    }
+    .links{
+      display:flex;
+      justify-content:center;
+      gap:22px;
+      flex-wrap:wrap;
+      margin:0 0 14px;
+      font-size:13px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:#2b2b2b;
+      font-weight:300;
+    }
+    .private{
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:18px 0 0;
+      font-weight:300;
+    }
+
+    .bottom-photo{
+      width:160px;
+      margin:26px auto 0;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 16px 28px rgba(0,0,0,.10);
+      background:#ddd;
+      aspect-ratio: 9 / 16;
+    }
+    .bottom-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+
+    .corner-logo{
+      position:absolute;
+      right:24px;
+      bottom:18px;
+      width:110px;
+      opacity:.95;
+    }
+    .corner-logo img{width:100%; height:auto; display:block;}
+
+    @media (max-width: 860px){
+      h1{font-size:44px}
+      .intro{grid-template-columns:1fr;}
+      .photo{max-width:420px; margin:10px auto 0;}
+      .classes{grid-template-columns:1fr;}
+      .note{text-align:center; margin-top:0}
+      .times{max-width:420px; margin:0 auto}
+      .descriptions{max-width:520px; margin:0 auto}
+      .corner-logo{position:static; margin:28px auto 0;}
+      .page{padding-bottom:36px}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header class="header">
+      <div class="brand-mark" aria-label="Brand mark">
+        <img src="assets/logo-circle.jpg" alt="Yoga With Emily logo" />
+      </div>
+      <h1>YOGA WITH EMILY</h1>
+    </header>
+
+    <section class="intro" aria-label="About">
+      <div>
+        <div class="hello">hi - im emily!</div>
+
+        <p>
+          I teach yoga (asana) in the Great North Woods of beautiful New Hampshire. I can be found hiking with my
+          chocolate lab, trail running, or catching sunrises. I began my yoga practice in 2019 in search of community
+          and connection. I found a deep love for the ancient practice which encourages mindfulness and self-discovery.
+        </p>
+
+        <p>
+          Emily recently completed her 200-hour YTT with Fluid Yoga, an approach to movement that allows for freedom and
+          exploration while aligning the body in a safe and efficient manner. She believes yoga is for every body shape
+          and you do not need to be flexible or strong to begin a practice.
+        </p>
+
+        <p>
+          Emily hopes to bring students deeper into their bodies by connecting with their breath and becoming aware of
+          their minds. Emily encourages beginners to give it a try and she strives to provide a friendly, safe and
+          inclusive environment for everyone.
+        </p>
+      </div>
+
+      <div class="photo">
+        <img src="assets/emily-portrait.jpg" alt="Emily smiling outdoors" />
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section aria-label="Weekly classes">
+      <h2 class="section-title">WEEKLY CLASSES</h2>
+
+      <div class="classes">
+        <div class="times">
+          <div class="block">
+            <div class="day">TUESDAY EVENINGS</div>
+            <div class="meta">5:30 - 6:30PM
+RANDOLPH TOWN HALL</div>
+          </div>
+
+          <div class="block">
+            <div class="day">SATURDAY MORNING</div>
+            <div class="meta">8:30 - 9:45AM
+NORTHERN ROOTS YOGA</div>
+          </div>
+        </div>
+
+        <div class="descriptions">
+          <div class="class">
+            <p class="name">Gentle Restorative Flow</p>
+            <p class="desc">
+              This evening practice is designed to calm the nervous system, soften tension and prepare you for bed.
+            </p>
+          </div>
+
+          <div class="class">
+            <p class="name">Mindful Flow</p>
+            <p class="desc">
+              Mindful Flow — this morning practice wakes the body and allows for steady, intentional movement.
+            </p>
+          </div>
+        </div>
+
+        <div class="note">
+          ESSENTIAL OIL AND<br/>
+          HANDS-ON ASSISTS ARE<br/>
+          GIVEN WITH YOUR<br/>
+          PERMISSION.
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" aria-label="Contact">
+      <p class="label">CONTACT:</p>
+      <p class="email">
+        <a href="mailto:emilyfitzgerald713@gmail.com">EMILYFITZGERALD713@GMAIL.COM</a>
+      </p>
+
+      <div class="links">
+        <a href="#" target="_blank" rel="noopener">INSTAGRAM LINK</a>
+        <a href="#" target="_blank" rel="noopener">FACEBOOK LINK</a>
+      </div>
+
+      <p class="private">AVAILABLE FOR PRIVATE GROUPS OR EVENTS</p>
+
+      <div class="bottom-photo" aria-label="Mountain yoga photo">
+        <img src="assets/emily-mountain.jpg" alt="Yoga pose on mountain" />
+      </div>
+    </section>
+
+    <div class="corner-logo" aria-label="Corner logo">
+      <img src="assets/logo-small.jpg" alt="Yoga With Emily small logo" />
+    </div>
+
+  </main>
+</body>
+</html>
